@@ -103,3 +103,25 @@ Download symbols locally
 | `dt ntdll!_PEB @$peb <struct>-><pointed struct>->...` | display sub structures starting from PEB                            | `dt ntdll!_PEB @$peb Ldr->InMemoryOrderModuleList`            |
 | `!list -x  "dt <type> <attribute[s]>" <base_addr>`    | use link extension to traverse linked list starting at base address | `!list -x "dt _LDR_DATA_TABLE_ENTRY BaseDllName" 0x0001ed...` |
 
+
+
+Controlling execution:
+
+* g (Go) - Continue program execution
+* bu (Set Breakpoint) - Pause execution at a specific function
+* Step Into (F11) - Execute one instruction and step into functions
+* Inspecting your program:
+
+* x (Examine Symbols) - List functions and variables
+* lm (List Loaded Modules) - Show all loaded DLLs and executables
+* k (Display Stack Backtrace) - View the call stack
+* ~ (Thread Status) - List all threads
+* !analyze -v - Automatically analyze crashes
+
+Reference:
+
+* bl (Breakpoint List)
+* ~s (Set Current Thread)
+* .sympath+
+* .srcpath (Set Source Path)
+* qd (Quit and Detach)
